@@ -1,0 +1,10 @@
+#exclude everything in this folder
+flatmaps/*
+slices/*
+
+oldVersion/*
+
+#want to keep the empty folder but can't keep an empty folder - it needs to have at least one file =>
+#exception to the above rules:
+!flatmaps/.gitkeep
+!slices/.gitkeep
