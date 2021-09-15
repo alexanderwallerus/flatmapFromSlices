@@ -15,7 +15,7 @@ color[] shanks = new color[]{color(0, 255, 255),
                              color(255, 0, 255),
                              color(127)};
 
-boolean inverseOrder = false;    //flip the top and bottom of the flatmap
+boolean reverseOrder = true;    //flip the top and bottom of the flatmap
 boolean saveFlatmap = true;
 String saveName = "flatmap";
 boolean showShanks = true;
@@ -337,7 +337,7 @@ void makePlots(Slice[] slices, color[] channels, float scaling,
     //save the .pdf
     endRecord();
     //save the .png
-    PImage flatmap = get(int(plotPos.x) - 50, int(plotPos.y),
+    PImage flatmap = get(int(plotPos.x) - 80, int(plotPos.y),
                          max(int(recordDist), int(plotPos.x + 50)), 
                          int(plotPos.y + slicesOffset - 20));
     flatmap.save("flatmaps\\" + saveName +  ".png");
@@ -364,9 +364,9 @@ void drawScaleBar(PVector pos, float scaling){
 Slice[] loadFiles(){
   String slicesPath = sketchPath() + "\\slices";
   String[] fileNames = listFileNames(slicesPath);
-  fileNames = subset(fileNames, 1, fileNames.length-1);  //get rid of the .gitignore
+  fileNames = subset(fileNames, 1, fileNames.length-1);  //get rid of the .gitkeep
   fileNames = sort(fileNames);
-  if(inverseOrder){
+  if(reverseOrder){
     fileNames = reverse(fileNames);
   }
   
@@ -386,7 +386,8 @@ Slice[] loadFiles(){
         
     for(int col=1; col<header.getColumnCount(); col++){
       //additional info starts in column 1 => go through all remaining columns
-      if((header.getString(col) != null) && (!header.getString(col).equals(""))){  
+      if((header.getString(col) != null) && 
+         (!header.getString(col).trim().equals(""))){  
         //There is data in this column
         //every column before the *-column contains shanks of the one probe
         if(header.getString(col).trim().charAt(0)!='*'){

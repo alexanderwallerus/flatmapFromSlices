@@ -1,10 +1,16 @@
 #exclude everything in this folder
 flatmaps/*
 slices/*
-
-oldVersion/*
+combineSlices/brains/*
+combineSlices/results/*
+combineSlices/normalizeChannel/slices/*
+combineSlices/normalizeChannel/results/*
 
 #want to keep the empty folder but can't keep an empty folder - it needs to have at least one file =>
 #exception to the above rules:
 !flatmaps/.gitkeep
 !slices/.gitkeep
+!combineSlices/brains/.gitkeep
+!combineSlices/results/.gitkeep
+!combineSlices/normalizeChannel/slices/.gitkeep
+!combineSlices/normalizeChannel/results/.gitkeep

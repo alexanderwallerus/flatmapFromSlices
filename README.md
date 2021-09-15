@@ -60,3 +60,9 @@ color[] shanks = new color[]{color(0, 255, 255),
 * showShanks = false allows removing the shank sites from the created flatmap
 * interpolatedContour = false will plot the slices as rectangular blocks
 * interpolatedContour = true will plot the outline of the flatmap as a continuous line. Special additions (\*) won't be visualized in this mode.
+
+## Merge flatmaps
+
+The combineSlices folder contains python scripts for merging different slices and merging entire different flatmaps. This can be useful to create an average flatmap of multiple experiments.
+
+Please have a look at the scripts' docstrings for information on how to use them - It is very straigthforward.
