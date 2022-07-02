@@ -11,14 +11,14 @@ color[] channels = new color[]{color(0),
                                color(0)};
 
 //colors for the shanks of different recording silicon probes inserted into the tissue
-color[] shanks = new color[]{color(0, 255, 255),
+color[] shanks = new color[]{color(255, 255, 0),
                              color(255, 0, 255),
                              color(127)};
 
-boolean reverseOrder = true;    //flip the top and bottom of the flatmap
+boolean reverseOrder = false;    //flip the top and bottom of the flatmap
 boolean saveFlatmap = true;
 String saveName = "flatmap";
-boolean showShanks = true;
+boolean showShanks = false;
 boolean interpolatedContour = true;
 
 float scaling = 1.0/3.0;         //0.3333... um per Pixel
@@ -349,12 +349,12 @@ void drawScaleBar(PVector pos, float scaling){
   textFont(f);
   textAlign(CENTER, TOP);
   textLeading(40);
-  fill(255, 0, 0);  noStroke();
+  fill(255);  noStroke();
   String scaleInfo = "500μm\n" + nf(scaling, 0, 2) + "μm per pixel";
   text(scaleInfo, pos.x, pos.y);
   float lineLength = 500 * scaling; 
   strokeWeight(4);
-  stroke(255, 0, 0);
+  stroke(255);
   strokeCap(SQUARE);
   line(pos.x - (lineLength/2), pos.y + 27, pos.x + (lineLength/2), pos.y + 27);
   line(pos.x - (lineLength/2), pos.y + 27-10, pos.x - (lineLength/2), pos.y + 27+10);

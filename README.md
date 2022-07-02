@@ -4,6 +4,9 @@
 
 This program was written to create flattened out maps of brain regions throughout numerous slices. The flatmap will show the strength of fluorescence signals in the mapped region as well as the location of silicon probe recording sites.
 
+![example created flatmaps](/readmeFiles/exampleFlatmaps.png)
+The distributions of neurons in the dorsal Entorhinal Cortex layer III (left) that project to different sides of the septal Hippocampus CA1 Stratum Lacunosum-Moleculare (right)
+
 The program will work just as well with any non-brain-slice data formated the same way.
 
 ## Usage
